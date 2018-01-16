@@ -53,13 +53,12 @@
   $totalItems = $productos->getCountProductosByCategoria($_GET["id"]);
 
 ?>
-
-<div class="col-md-9">
-  <div class="row">
-    <?php if ("normal" == $state):?>
-<h2 class='subtitle' style='margin-left:0; margin-right:0;'><?php echo $categoria["nombre"];?></h2>
-<div id="data-container">
+<?php if ("normal" == $state):?>
+  <div class="col-md-9">
+    <div class="row">
+      <h2 class='subtitle' style='margin-left:0; margin-right:0;'><?php echo $categoria["nombre"];?></h2>
 <?php endif; ?>
+<div id="data-container">
   <div class="row">
     <?php
     foreach($productos->getProductosByCategoria($_GET["id"], $itemsPerPage, $currentPage) as $producto){
